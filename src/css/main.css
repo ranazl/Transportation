@@ -1,0 +1,151 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  
+.firstBody, .p-4 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers vertically */
+}
+  
+.scroll-box {
+    flex: 0 0 auto;
+    width: 200px;
+    scroll-snap-align: center;
+}
+
+.headerStyle{
+    background-color: #0E4459;
+}
+
+.text-center{
+    border: none !important;
+}
+
+.cardBody{
+    background-color: #E6EFF4;
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px #D4DCE1;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.cardBody:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #C4D1D9;
+    cursor: pointer;
+}
+
+.cardBody:active {
+    transform: translateY(-10px);
+}
+    
+.footer {
+    background-color: #F1F2F4;
+    position: sticky;
+    bottom: 0;
+    width: 106%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.rowParrent{
+    background-color: #F1F2F4;
+}
+  
+.footer i {
+    font-size: 20px;
+    color: #007bff;
+}
+
+.profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profileTitle{
+    font-size: 1.5rem;
+}
+
+.firstBody{
+    padding-right: unset !important;
+    padding-bottom: 10px !important;
+    margin-top: 40px;
+}
+
+.badgeStyle svg{ 
+    color: white !important;
+}
+
+.MuiBadge-badge{
+    background-color: red;
+}
+
+.scrollable-container {
+    display: flex;
+    gap: 10%;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+  
+.scroll-box {
+    flex: 0 0 auto;
+    width: 200px;
+    scroll-snap-align: center;
+}
+
+.location-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.floating-stats {
+    position: relative;
+    margin-top: -20px;
+    z-index: 10;
+}
+
+.floatingCard{
+    background-color: #4B80AF !important;
+    width: 65%;
+    border-radius: 15px !important;
+    height: 100px;
+}
+
+.flighStyle{
+    height: 100%;
+}
+
+.fontFloat{
+    font-weight: bold;
+    color: white;
+}
+
+.fontFloatCost{
+    color: white;
+}
+
+@media (min-width:1020px) {
+    .scrollable-container{
+        justify-content: center;
+        align-items: center;
+        gap: 15%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 100%;
+    }
+}

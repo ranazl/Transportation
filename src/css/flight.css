@@ -1,0 +1,42 @@
+.header {
+    background-color: #1976d2;
+    color: white;
+}
+  
+.body {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+.toggleColorParent{
+  /* background-color: #C4D1D9; */
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  border-radius: 50px;
+}
+
+.toggleColorChild{
+  border-color: #919aa0 !important;
+  border-radius: 50px;
+  background-color: transparent;
+  line-height: 50px;
+}
+
+.toggleColorChild.active,
+.toggleColorChild:hover,
+.toggleColorChild:focus {
+  background-color: #C4D1D9 !important;
+  color: #1C1C1C !important;
+  /* border: none; */
+}
+
+  
