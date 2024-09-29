@@ -1,26 +1,26 @@
 .header {
-    background-color: #1976d2;
-    color: white;
+  background-color: #1976d2;
+  color: white;
 }
   
 .body {
-    min-height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
   
 .footer {
-    background-color: #f8f9fa;
-    padding: 20px;
-    text-align: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
 }
 
 .toggleColorParent{
   /* background-color: #C4D1D9; */
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 100%;
   border-radius: 50px;
 }
 
@@ -39,4 +39,141 @@
   /* border: none; */
 }
 
-  
+.locationBox {
+  position: relative;
+  border: 1.5px solid #C2C3C4;
+  border-radius: 15px !important;
+}
+
+.from-to-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.transparent-input {
+  background: none; /* Remove background */
+  border: none; /* Remove default borders */
+  border-bottom: 2px solid #ccc; /* Add bottom border */
+  width: 100%;
+  padding: 5px;
+  box-shadow: none !important; /* Remove box shadow */
+}
+
+.switcherButton {
+  padding: 5px 10px;
+  border-radius: 50% !important;
+  border: 1.5px solid #C2C3C4;
+}
+
+.border-between {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal-border {
+  width: 100%;
+  border-bottom: 2px solid #ccc;
+}
+
+.divider {
+  border-top: 1px solid #C2C3C4; /* Horizontal border between inputs */
+  margin: 5px 0;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.switcherBtn{
+  position: absolute;
+  right: 0;
+  align-items: center !important;
+  justify-content: center !important;
+  display: flex !important;
+  margin-right: 20px;
+}
+
+.locationInput{
+  margin-right: 60%;
+  flex-direction: column !important;
+  display: flex !important;
+}
+
+.locationPng{
+  color: #C2C3C4;
+}
+
+.date-pickers {
+  display: flex;
+  gap: 0;  /* Removes any space between the two date pickers */
+}
+
+.date-picker {
+  width: 100%;
+  margin-right: -1px;  /* Adjusts any extra spacing */
+}
+
+.Departure div{
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-radius: 15px;
+  border-right: 0.5px;
+}
+
+.Arrival div{
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-radius: 15px;
+  border-left: 0.5px;
+}
+
+.Departure{
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-radius: 15px;
+  border: 1.5px solid #C2C3C4 !important;
+}
+
+.Arrival{
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-radius: 15px;
+  border: 1.5px solid #C2C3C4 !important;
+}
+
+.passenger div{
+  border-radius: 15px !important;
+  border: 1.5px solid #C2C3C4 !important;
+}
+
+.search-button {
+  background-color: #4B80AF;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 80%;
+  height: 60px;
+}
+
+.search-button:hover {
+  background-color: #3a6c92;
+}
+
+.css-wb57ya-MuiFormControl-root-MuiTextField-root{
+  position: sticky !important;
+}
+
+@media (min-width: 600px) {
+  .passenger,
+  .datepicker-row,
+  .locationBox{
+    margin: 20px !important;
+  }
+}

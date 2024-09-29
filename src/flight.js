@@ -1,10 +1,31 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import { SwapVert } from '@mui/icons-material';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { useNavigate } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import './css/flight.css';
 
 const Flight = () => {
-  const [tripType, setTripType] = useState('roundtrip'); // State to manage the selected trip type
+
+  const navigate = useNavigate();
+  const handleSearch = () => {
+    navigate('/flightTicket', { state: { locations } });
+};
+
+  const [tripType, setTripType] = useState('roundtrip');
+  const [locations, setLocations] = useState({ from: '', to: '' });
+
+  const handleSwitch = () => {
+    setLocations((prev) => ({
+      from: prev.to,
+      to: prev.from,
+    }));
+  };
 
   return (
     <Container fluid className="p-0 m-0 full-width-container">
@@ -19,8 +40,8 @@ const Flight = () => {
 
       {/* Body */}
       <Row className="body p-5">
+
         <Col xs={12} className="d-flex justify-content-center">
-          {/* Use ToggleButtonGroup to manage the toggle state */}
           <ToggleButtonGroup
             type="radio"
             name="tripType"
@@ -36,7 +57,7 @@ const Flight = () => {
             >
               Round Trip
             </ToggleButton>
-            
+
             <ToggleButton
               id="oneway"
               value="oneway"
@@ -47,14 +68,91 @@ const Flight = () => {
             </ToggleButton>
           </ToggleButtonGroup>
         </Col>
+
+        {/* Location Input Box */}
+        <Col xs={12}>
+          <Row className="locationBox bg-light p-4 rounded align-items-center">
+            <Col xs={10} className="locationInput">
+              <div className="d-flex align-items-center mb-3 inputGroup">
+                <i className="fas fa-map-marker-alt me-2 locationPng"></i>
+                <Form.Control
+                  type="text"
+                  placeholder="From"
+                  className="transparent-input"
+                  value={locations.from}
+                  onChange={(e) => setLocations({ ...locations, from: e.target.value })}
+                />
+              </div>
+
+              <hr className="divider" />
+
+              <div className="d-flex align-items-center inputGroup">
+                <i className="fas fa-map-marker-alt me-2 locationPng"></i>
+                <Form.Control
+                  type="text"
+                  placeholder="To"
+                  className="transparent-input"
+                  value={locations.to}
+                  onChange={(e) => setLocations({ ...locations, to: e.target.value })}
+                />
+              </div>
+            </Col>
+
+            {/* Switcher Button */}
+            <Col xs={2} className="switcherBtn">
+              <Button variant="outline-primary" onClick={handleSwitch} className="switcherButton">
+                <SwapVert />
+              </Button>
+            </Col>
+          </Row>
+        </Col>
+
+        {/* DatePicker */}
+        <Col xs={12}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Row className="justify-content-center align-items-center datepicker-row">
+              <Col xs={12} md={6} lg={4} className="d-flex justify-content-center">
+                <div className="d-flex date-pickers">
+                  <DatePicker
+                    label="Departure"
+                    views={['year', 'month', 'day']}
+                    value={null}
+                    onChange={(newValue) => {
+                      console.log(newValue);
+                    }}
+                    className="date-picker Departure"
+                  />
+                  <DatePicker
+                    label="Arrival"
+                    views={['year', 'month', 'day']}
+                    value={null}
+                    onChange={(newValue) => {
+                      console.log(newValue);
+                    }}
+                    className="date-picker Arrival"
+                  />
+                </div>
+              </Col>
+            </Row>
+          </LocalizationProvider>
+        </Col>
+
+        {/* TextField */}
+        <Col xs={12} className="d-flex justify-content-center">
+          <Box sx={{ width: 500, maxWidth: '100%' }}>
+            <TextField fullWidth label="Passengers" id="fullWidth" className="passenger" />
+          </Box>
+        </Col>
+
       </Row>
 
       {/* Footer */}
-      <Row className="footer p-3 bg-light d-flex justify-content-center">
+      <Row className="footer mt-4 p-3 d-flex justify-content-center align-items-center">
         <Col xs={12} className="text-center">
-          <p>&copy; 2024 Travel App. All rights reserved.</p>
+          <Button className="search-button" onClick={handleSearch}>Search</Button>
         </Col>
       </Row>
+
     </Container>
   );
 };
