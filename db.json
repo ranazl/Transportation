@@ -1,0 +1,28 @@
+{
+    "ticket": [
+      {
+        "id": 1,
+        "flightName": "AnadoluJet",
+        "timeFrom":"10:00 AM",
+        "timeTo":"11:30 AM",
+        "flightType":"Business Class",
+        "cost":"235$"
+      },
+      {
+        "id": 2,
+        "flightName": "AnadoluJet",
+        "timeFrom":"8:00 AM",
+        "timeTo":"9:30 AM",
+        "flightType":"Business Class",
+        "cost":"225$"
+      },
+      {
+        "id": 3,
+        "flightName": "Qeshm",
+        "timeFrom":"4:00 PM",
+        "timeTo":"5:30 PM",
+        "flightType":"Economy",
+        "cost":"185$"
+      }
+    ]
+  }
