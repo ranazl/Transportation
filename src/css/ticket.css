@@ -55,6 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
 .body-title {
@@ -126,6 +127,10 @@
   color: #333;
 }
 
+.ticketP1{
+  margin-top: 15px;
+}
+
 .ticket-part-horizontal {
   display: flex;
   justify-content: space-between;
@@ -134,9 +139,13 @@
 }
 
 .flight-name {
-  font-weight: bold;
   margin-bottom: 5px;
   margin: 0;
+  font-size: 1rem;
+}
+
+.flight-icon{
+  margin-right: 10px;
 }
 
 .time {
@@ -152,9 +161,15 @@
   margin-right: 10px;
 }
 
-.time,
+.time{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 .cost {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
+  color: #009D10;
+  font-weight: bold;
 }
 
 .back-arrow {
@@ -169,4 +184,12 @@
 
 .back-arrow:hover {
   color: #F2C230; /* Change color on hover */
+}
+
+.line1Style{
+  margin: 0px 20px;
+}
+
+.line2Style{
+  margin: 0px 40px;
 }

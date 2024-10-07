@@ -4,6 +4,12 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import World from './asset/world.png';
 import Ticket from './asset/ticket.png';
 import Transport from './asset/transport.png';
+import Come from './asset/come.png';
+import Back from './asset/back.png';
+import Chair from './asset/chair.png';
+import AnadoluJet from './asset/anadoluJet.png';
+import QeshmAir from './asset/qeshmAir.png';
+import Line from './asset/Line.png';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import './css/ticket.css';
 import axios from 'axios';
@@ -51,7 +57,6 @@ const FlightTicket = () => {
       {/* Body */}
       <Row className="body p-4">
         <Col className="bodyChild">
-          <h2 className="body-title">Available Flights</h2>
           <div className="TicketParrent">
             {tickets.map((ticket, index) => (
               <div className="Ticket" key={index}>
@@ -59,18 +64,34 @@ const FlightTicket = () => {
                 {/* Ticket Content */}
                 <div className="ticket-content">
                   {/* Part 1 */}
-                  <div className="ticket-part">
-                    <h5 className="flight-name">{ticket.flightName}</h5>
-                    <p className="time">{ticket.timeFrom} - {ticket.timeTo}</p>
+                  <div className="ticket-part ticketP1">
+                    <h5 className="flight-name">
+                      <img
+                        className='flight-icon'
+                        src={ticket.flightName === 'Qeshm' ? QeshmAir : AnadoluJet}
+                        alt={ticket.flightName}
+                      />
+                      {ticket.flightName}
+                    </h5>
+                    <p className="time">{ticket.timeFrom} <img src={Come} alt="flightIcon" /> {ticket.timeTo}</p>
                   </div>
+                  <img src={Line} alt="line" className='line1Style'/>
                   {/* Part 2 */}
                   <div className="ticket-part">
-                    <h5 className="flight-name">{ticket.flightName}</h5>
-                    <p className="time">{ticket.timeFrom} - {ticket.timeTo}</p>
+                    <h5 className="flight-name">
+                      <img
+                        className='flight-icon'
+                        src={ticket.flightName === 'Qeshm' ? QeshmAir : AnadoluJet}
+                        alt={ticket.flightName}
+                      />
+                      {ticket.flightName}
+                    </h5>
+                    <p className="time">{ticket.timeFrom} <img src={Back} alt="flightIcon" /> {ticket.timeTo}</p>
                   </div>
+                  <img src={Line} alt="line" className='line2Style'/>
                   {/* Part 3 */}
                   <div className="ticket-part-horizontal">
-                    <h5 className="flight-type">{ticket.flightType}</h5>
+                    <h5 className="flight-type"> <img src={Chair} alt="flightType" /> {ticket.flightType}</h5>
                     <p className="cost">{ticket.cost}</p>
                   </div>
                 </div>

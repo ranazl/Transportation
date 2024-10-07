@@ -8,6 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: unset !important;
+  margin-top: 50px;
 }
   
 .footer {

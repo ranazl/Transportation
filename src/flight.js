@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
-import { AppBar, Toolbar, Typography } from '@mui/material';
+// import { AppBar, Toolbar, Typography } from '@mui/material';
 import { SwapVert } from '@mui/icons-material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -30,13 +30,13 @@ const Flight = () => {
   return (
     <Container fluid className="p-0 m-0 full-width-container">
       {/* Header */}
-      <AppBar position="static" className="header">
+      {/* <AppBar position="static" className="header">
         <Toolbar>
           <Typography variant="h6" component="div">
             {tripType === 'roundtrip' ? 'Round Trip' : 'One Way'} Page
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
 
       {/* Body */}
       <Row className="body p-5">
